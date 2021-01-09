@@ -1,3 +1,4 @@
+    def max_pile(self, i):
         assert i <= self.hauteur_pile(), "La pile compte moins de i éléments"
         # Initialisation
         rang = 1 # L'indice de l'élément en cours de traitement
