@@ -1,0 +1,11 @@
+        Q = Pile()
+        n = 0
+        while not (self.est_vide()):
+            n = n + 1 # On incrémente le compteur
+            x = self.depiler()
+            Q.empiler(x)
+        while not(Q.est_vide()):
+            x = Q.depiler() # La valeur dépilée depuis la pile Q est stockée en x
+            self.empiler(x)
+        return n # Renvoie la valeur du compteur n qui correspond au nombre d'éléments transférés
+    
