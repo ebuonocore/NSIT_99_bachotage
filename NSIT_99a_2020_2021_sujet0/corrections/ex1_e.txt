@@ -1,0 +1,13 @@
+    def tri_crepes(self):
+        assert not self.est_vide(), "Il n'y a pas de crêpe à trier !"
+        h = self.hauteur_pile()
+        for i in range(0, h-1):
+            rang_maxi = self.max_pile(h-i)
+            # print(self)
+            self.retourner(rang_maxi)
+            # print(self)
+            self.retourner(h-i)
+        # La fonction ne renvoie rien (en réalité None en python)
+        # On peut tout aussi bien se passer de retour
+        # ce qui aura le même effet lors de l'exécution
+        return None
