@@ -1,3 +1,4 @@
+    def hauteur_pile(self):
         Q = Pile()
         n = 0
         while not (self.est_vide()):
