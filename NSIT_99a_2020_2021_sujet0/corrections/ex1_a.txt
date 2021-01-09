@@ -1,0 +1,6 @@
+P = Pile()
+P.empiler(8)
+P.empiler(5)
+P.empiler(2)
+P.empiler(4)
+print(P)
