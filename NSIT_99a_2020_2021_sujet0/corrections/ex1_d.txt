@@ -1,3 +1,4 @@
+    def retourner(self, j):
         assert j <= self.hauteur_pile(), "La pile compte moins de j éléments"
         # Initialisation
         Q = Pile() # une pile vide pour vider P
