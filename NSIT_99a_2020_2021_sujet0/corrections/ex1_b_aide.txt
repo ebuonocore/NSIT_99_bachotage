@@ -1,0 +1,16 @@
+# Petit manuel de traduction de l'implémentation fonctionnelle vers la POO
+fonction1(P)    ---> P.methode1()
+
+# Dans la déinition des méthode de l'instance, ne pas oublier le mettre self dans les parenthèses:
+def methode(self):
+  ...
+  
+# Toujours dans les défintions de méthodes, toutes les références à l'instance sont traduites par self:
+fonction2(P)  --->  self.methode2()
+
+# Mais si Q est une Pile définie localement dans la méthode, on ne fait pas référence  self:
+fonction3(Q)  ---> Q.methode3()
+
+# Exemples:
+x = depiler(P)  ---> x = self.depiler()
+empiler(Q, x)   ---> Q.empiler(x)
