@@ -1,0 +1,19 @@
+        assert j <= self.hauteur_pile(), "La pile compte moins de j éléments"
+        # Initialisation
+        Q = Pile() # une pile vide pour vider P
+        R = Pile() # une pile vide pour vider Q
+        rang = 1 # le rang de l'élément en cours de traitement
+        # On dépile les j premiers éléments dans Q
+        while rang <= j:
+            Q.empiler(self.depiler())
+            rang += 1
+        # On vide Q dans R
+        while not(Q.est_vide()):
+            R.empiler(Q.depiler())
+        # On vide R dans P
+        while not(R.est_vide()):
+            self.empiler(R.depiler())
+        # La fonction ne renvoie rien (en réalité None en python)
+        # On peut tout aussi bien se passer de retour
+        # ce qui aura le même effet lors de l'exécution
+        return None
