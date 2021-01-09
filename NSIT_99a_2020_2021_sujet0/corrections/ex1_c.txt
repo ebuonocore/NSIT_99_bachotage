@@ -1,0 +1,19 @@
+        assert i <= self.hauteur_pile(), "La pile compte moins de i éléments"
+        # Initialisation
+        rang = 1 # L'indice de l'élément en cours de traitement
+        rang_maxi = 1 # le rang du maximum en cours
+        maxi = self.depiler() # au début, le maximum est le premier élément ...
+        self.empiler(maxi) # ... que l'on rempile immédiatement
+        Q = Pile() # une pile vide pour stocker les éléments traités
+        # On lit tous les éléments jusqu'au i-ième pour trouver le maximum
+        while rang <= i:
+            x = self.depiler()
+            if x > maxi:
+                maxi = x
+                rang_maxi = rang
+            Q.empiler(x)
+            rang += 1
+        # On reconstitue la pile P
+        while not(Q.est_vide()):
+            self.empiler(Q.depiler())
+        return rang_maxi
