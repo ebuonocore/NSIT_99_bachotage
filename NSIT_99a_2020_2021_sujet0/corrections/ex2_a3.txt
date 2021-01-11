@@ -1,0 +1,7 @@
+T =  creer_tableau(10, 10, 9) 
+# Lance et affiche le chronométrage de la fonction somme_max_rec
+%timeit somme_max_rec(T, 9, 9)
+
+
+# Lance et affiche le chronométrage de la fonction somme_max_memoisation
+%timeit somme_max_memoisation(T, 9, 9)
