@@ -1,0 +1,14 @@
+# Programmation classique avec deux boucles imbriquées
+import random as rd
+
+def creer_tableau(nb_lignes:int, nb_colonnes:int, valeur_max:int)->list:
+    """ Renvoie un tableau de (nb_lignes * nb_colonnes) d'entiers tirés au hasard 
+        entre 1 et valeur_max
+    """
+    L = []
+    for i in range(nb_lignes):
+        L.append([]) # Créé la i-ème ligne vide
+        for j in range(nb_colonnes):
+            valeur = rd.randint(1, valeur_max) # Tire la valeur au hasard
+            L[i].append(valeur) # Ajouter la valeur à la i-ème ligne
+    return L
