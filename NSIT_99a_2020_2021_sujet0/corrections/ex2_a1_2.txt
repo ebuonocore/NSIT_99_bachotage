@@ -1,0 +1,8 @@
+# Solution plus courte avec liste en compréhension
+import random as rd
+
+def creer_tableau_en_comprehension(nb_lignes:int, nb_colonnes:int, valeur_max:int)->list:
+    """ Renvoie un tableau de (nb_lignes * nb_colonnes) d'entiers tirés au hasard 
+        entre 1 et valeur_max
+    """
+    return [[rd.randint(1, valeur_max) for j in range(nb_colonnes)] for i in range(nb_lignes)]
