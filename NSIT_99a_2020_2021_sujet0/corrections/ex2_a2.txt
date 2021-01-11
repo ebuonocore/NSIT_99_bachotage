@@ -1,0 +1,33 @@
+def somme_max_memo(T:list, i:int, j:int, memoire:list)->list:
+    """ Renvoie la somme maximum des différents chemins obtenu par appels récursifs
+        Si une valeur a déjà été calculée et mémorisée dans le tableau memoire,
+        elle est renvoyée directement sans faire d'autres appels récursifs.
+    """
+    if memoire[i][j] is not None:
+        return memoire[i][j]
+    if i == j == 0:
+        memoire[0][0] = T[0][0]
+        return memoire[0][0]
+    elif i == 0:
+        memoire[0][j] = T[0][j] + somme_max_memo(T, 0, j-1, memoire)
+    elif j == 0:
+        memoire[i][0] = T[i][0] + somme_max_memo(T, i-1, 0, memoire)
+    else:
+        gauche = somme_max_memo(T, i, j-1, memoire)
+        haut = somme_max_memo(T, i-1, j, memoire)
+        memoire[i][j] = T[i][j] + max(gauche, haut)
+    return memoire[i][j]
+
+def somme_max_memoisation(T:list, i:int, j:int)->int:
+    """ Construit le tableau memoire de même dimensions que T
+        A l'initialisation, toutes les valeurs de memoire sont à None
+        Appel somme_max_memo() pour calculer et renvoyer la somme correspondant au chemin optimal 
+    """
+    memoire = [[None for j in range(len(T[0]))] for i in range(len(T))]
+    return somme_max_memo(T, i, j, memoire)
+
+# Test: Caculs de T'[5][7] avec ou sans mémoïsation
+T =  creer_tableau(6, 8, 9) 
+print("Calcul sans mémoïsation:",somme_max_rec(T, 5, 7))
+print("Calcul avec mémoïsation:",somme_max_memoisation(T, 5, 7))
+T
