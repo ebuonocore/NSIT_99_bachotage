@@ -1,0 +1,21 @@
+def somme_max_glouton(T:list, i:int, j:int):
+    """ Recherche un chemin optimum selon un algorithme glouton.
+        Critère d'optimisation: On prend systématiquement la case en bas ou à droite 
+        qui a le plus gros score
+    """
+    s = T[0][0] # Initialise la somme avec la valeur de la case de départ
+    m, n = 0, 0 # Initialise l'indice de la colonne et de la ligne courante
+    while (n != len(T) - 1) or (m != len(T[0]) - 1):
+        if m == len(T[0]) - 1:
+            n += 1
+        elif n == len(T) - 1:
+            m += 1
+        elif T[n][m+1] > T[n+1][m]:
+            m += 1
+        else:
+            n += 1
+        s += T[n][m]
+    return s
+
+T =  creer_tableau(10, 10, 9) 
+somme_max_glouton(T, 9, 9)
