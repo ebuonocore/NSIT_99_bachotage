@@ -1,7 +1,0 @@
-  
-# Instanciation d'une nouvelle pile:
-P = Pile()
-
-# Syntaxe en POO pour appeler une méthode de l'instance P:
-P.methode1() # methode1 n'attend pas de paramètre
-P.methode2(param1) # appel de methode2 avec le passage d'un paramètre
