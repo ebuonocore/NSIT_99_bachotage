@@ -1,0 +1,17 @@
+* Couleur de fond:
+R
+V
+B
+
+* Bouton retour
+Taille:    px*    px
+Nom du fichier:
+
+
+* Titres
+Taille:    px*    px
+Police:
+Taille de la police:
+Effets:
+
+    
